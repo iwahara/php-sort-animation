@@ -11,22 +11,14 @@ class BubbleSort implements Sort
 
     private OutputInterface $output;
 
-    private int $count = 0;
-
     public function __construct(OutputInterface $output)
     {
         $this->output = $output;
     }
 
-    public function Count(): int
-    {
-        return $this->count;
-    }
-
     public function Sort(array $arr): array
     {
         $n = count($arr);
-        $count = 0;
         for ($i = 0; $i < $n - 1; $i++) {
             for ($j = 0; $j < $n - $i - 1; $j++) {
                 if ($arr[$j] > $arr[$j + 1]) {
@@ -36,7 +28,6 @@ class BubbleSort implements Sort
                     $arr[$j + 1] = $temp;
 
                     $this->writeArray($this->output, $arr);
-                    $this->count++;
                 }
 
             }

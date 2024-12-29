@@ -10,8 +10,6 @@ class QuickSort implements Sort
 
     private OutputInterface $output;
 
-    private int $count = 0;
-
     public function __construct(OutputInterface $output)
     {
         $this->output = $output;
@@ -54,20 +52,13 @@ class QuickSort implements Sort
                 // 要素を交換
                 list($arr[$i], $arr[$j]) = [$arr[$j], $arr[$i]];
                 $this->writeArray($this->output, $arr);
-                $this->count++;
             }
         }
 
         // ピボットとi+1の要素を交換してピボットを正しい位置に配置
         list($arr[$i + 1], $arr[$high]) = [$arr[$high], $arr[$i + 1]];
         $this->writeArray($this->output, $arr);
-        $this->count++;
 
         return $i + 1;  // ピボットのインデックスを返す
-    }
-
-    public function Count(): int
-    {
-        return $this->count;
     }
 }

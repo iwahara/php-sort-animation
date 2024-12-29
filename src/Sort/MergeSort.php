@@ -10,8 +10,6 @@ class MergeSort implements Sort
 
     private OutputInterface $output;
 
-    private int $count = 0;
-
     public function __construct(OutputInterface $output)
     {
         $this->output = $output;
@@ -41,8 +39,7 @@ class MergeSort implements Sort
 
                 // マージ
                 $this->merge($arr, $left, $mid, $right);
-                $this->writeArray($this->output,$arr);
-                $this->count++;
+                $this->writeArray($this->output, $arr);
             }
 
             // サイズを2倍にして次のステップへ進む
@@ -88,10 +85,5 @@ class MergeSort implements Sort
             $j++;
             $k++;
         }
-    }
-
-    public function Count(): int
-    {
-        return $this->count;
     }
 }

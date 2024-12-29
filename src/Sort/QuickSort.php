@@ -60,6 +60,8 @@ class QuickSort implements Sort
 
         // ピボットとi+1の要素を交換してピボットを正しい位置に配置
         list($arr[$i + 1], $arr[$high]) = [$arr[$high], $arr[$i + 1]];
+        $this->writeArray($this->output, $arr);
+        $this->count++;
 
         return $i + 1;  // ピボットのインデックスを返す
     }

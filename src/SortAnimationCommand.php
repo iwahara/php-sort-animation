@@ -3,6 +3,7 @@
 namespace Masaki\PhpSortAnimation;
 
 use Masaki\PhpSortAnimation\Sort\BubbleSort;
+use Masaki\PhpSortAnimation\Sort\MergeSort;
 use Masaki\PhpSortAnimation\Sort\QuickSort;
 use Masaki\PhpSortAnimation\Sort\Sort;
 use Symfony\Component\Console\Attribute\AsCommand;
@@ -42,7 +43,7 @@ class SortAnimationCommand extends Command
 
         $output->writeln('ソート前' . implode(',', $origin));
         $output->writeln('ソート後' . implode(',', $sorted));
-        $output->writeln("計算回数[{$sort->Count()}]");
+        $output->writeln("交換回数[{$sort->Count()}]");
 
         return Command::SUCCESS;
     }
@@ -53,6 +54,8 @@ class SortAnimationCommand extends Command
             return new BubbleSort($output);
         } else if ($name === 'quick') {
             return new QuickSort($output);
+        } else if($name == 'merge'){
+            return new MergeSort($output);
         }
 
         return new BubbleSort($output);

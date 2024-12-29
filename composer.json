@@ -1,0 +1,17 @@
+{
+    "name": "masaki/php-sort-animation",
+    "require": {
+        "symfony/console": "^7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Masaki\\PhpSortAnimation\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Masaki Iwahara",
+            "email": "3982522+iwahara@users.noreply.github.com"
+        }
+    ]
+}

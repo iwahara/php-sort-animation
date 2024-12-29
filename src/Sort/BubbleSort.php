@@ -26,14 +26,13 @@ class BubbleSort
                     $arr[$j] = $arr[$j + 1];
                     $arr[$j + 1] = $temp;
 
-                    $count++;
-
                     $this->writeArray($arr);
                     usleep(200 * 1000);
                 }
+                $count++;
             }
         }
-        $this->output->writeln("入れ替え回数[$count]");
+        $this->output->writeln("計算回数[$count]");
         return $arr;
     }
 
